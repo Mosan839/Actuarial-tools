@@ -2,9 +2,19 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 import streamlit as st
-import plotly.graph_objects as go
-import numpy as np
-from funding_level import run_simulation
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
+
+import streamlit as st
+
+try:
+    import plotly.graph_objects as go
+    import numpy as np
+    from funding_level import run_simulation
+except Exception as e:
+    st.error(f"Startup error: {e}")
+    st.stop()
 
 st.title("Conecast - scheme funding stochastic projector")
 
