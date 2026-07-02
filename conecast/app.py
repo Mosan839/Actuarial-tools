@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
 import streamlit as st
 import plotly.graph_objects as go
 import numpy as np
@@ -33,7 +36,7 @@ results = run_simulation(
     seed=42,
 )
 
-# Building plitly chart (cone) 
+# Building plotly chart (cone) 
 
 starting_fl = (starting_asset / starting_liabiities) * 100
 st.metric("Starting funding level", f"{starting_fl:.1f}%")
